@@ -64,3 +64,5 @@ SLIDES_OPTS = $(REVEALJS_OPTS)
 %.png : %.pdf
 	convert -density 300 $< -flatten $@
 
+%.png : %.svg
+	convert -density 300 $< -flatten $@

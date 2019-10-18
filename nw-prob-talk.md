@@ -1,6 +1,6 @@
 ---
-title: "Tree sequences"
-subtitle: "progress and challenges in genomes and genealogies"
+title: "Whole genomes and whole genealogies"
+subtitle: "progress and challenges with tree sequences"
 author: "Peter Ralph"
 date: "Northwest Probability // October 2019"
 ---
@@ -10,7 +10,7 @@ date: "Northwest Probability // October 2019"
 
 ## Genomes
 
-> - are very big ($10^7$--$10^12$ nucleotides)
+> - are very big ($10^7$--$10^{12}$ nucleotides)
 > - encode the basic *mechanisms* of life
 > - reflect past *history* and *process*
 
@@ -25,27 +25,31 @@ and from your four grandparents,
 
 . . .
 
-and your eight great-grandparents,
+and your eight great-grandparents
 
 . . .
 
-see where this is going?
+and your sixteen great-great-grandparents
+
+. . .
+
+... see where this is going?
 
 
 ## Genealogical ancestors
 
 In a well-mixed population of size $N$,
 
-- A most recent common ancestor of *everyone* lived at $\approx \log 2 N$ generations ago.
+- A most recent common ancestor of *everyone* lived at $\approx \log_2 N$ generations ago.
 
 - For humans: $\approx 500$ years; 
     but including geography and history, $\approx$ 2--3 thousand years
     (Chang ’99; Rohde, Olson & Chang ’04)
 
-- *Everyone* alive $\approx 1.77 \log_2 n$ generations ago
+- *Everyone* alive $\approx 1.77 \log_2 N$ generations ago
     is either an ancestor of everyone or has left behind no descendants. (Chang ’99)
 
-## Meiosis & Recombination (Sex)
+## Meiosis & Recombination
 
 ::: {.columns}
 ::::::: {.column width=50%}
@@ -58,9 +62,9 @@ In a well-mixed population of size $N$,
 - You have two copies of each chromosome, 
   one from each parent.
 
-- When you make a gamete, the copies *recombine*.
+- When you make a gamete, the copies *recombine*, at Poisson($\rho$) locations.
 
-- Model: switch parents at locations of a Poisson process.
+- *Mutations* appear at Poisson($\mu$) locations.
 
 :::
 ::::::
@@ -70,13 +74,83 @@ In a well-mixed population of size $N$,
 The number of $k^\text{th}$ *genetic* ancestors
 grows *linearly* with $k$.
 
-fig from gcbias
+::: {.centered}
+![](figs/gcbias/num_genetics_vs_genealogical_ancs.png)
+:::
 
+::: {.caption}
+from [gcbias.org](https://gcbias.org/2013/11/11/how-does-your-number-of-genetic-ancestors-grow-back-over-time/)
+:::
+
+## 
+
+::: {.centered}
+![](figs/gcbias/parents_grandparents.png){width=60%}
+:::
+
+::: {.caption}
+from [gcbias.org](https://gcbias.org/2013/11/11/how-does-your-number-of-genetic-ancestors-grow-back-over-time/)
+:::
+
+
+## 
+
+::: {.centered}
+![](figs/gcbias/male_line.png){width=60%}
+:::
+
+::: {.caption}
+from [gcbias.org](https://gcbias.org/2013/11/11/how-does-your-number-of-genetic-ancestors-grow-back-over-time/)
+:::
+
+## 
+
+::: {.centered}
+![](figs/gcbias/family_tree.png){width=60%}
+:::
+
+::: {.caption}
+from [gcbias.org](https://gcbias.org/2013/11/11/how-does-your-number-of-genetic-ancestors-grow-back-over-time/)
+:::
+
+## 
+
+::: {.centered}
+![](figs/gcbias/family_tree_w_trans.png){width=60%}
+:::
+
+::: {.caption}
+from [gcbias.org](https://gcbias.org/2013/11/11/how-does-your-number-of-genetic-ancestors-grow-back-over-time/)
+:::
+
+## 
+
+::: {.centered}
+![](figs/gcbias/family_tree_w_trans_2.png){width=60%}
+:::
+
+::: {.caption}
+from [gcbias.org](https://gcbias.org/2013/11/11/how-does-your-number-of-genetic-ancestors-grow-back-over-time/)
+:::
+
+#
+
+##
+
+Everyone is related by a vast genealogical network.
+
+. . .
+
+We get to observe *genomes*, noisily transmitted through it.
+
+. . .
+
+What can we learn about its structure? history? biology?
 
 <!-- the ARG -->
-# Tracing genetic ancestry
+#  The coalescent with recombination
 
-## The coalescent with recombination
+##
 
 ::: {.columns}
 ::::::: {.column width=50%}
@@ -86,8 +160,8 @@ ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
 - labeled ancestral blocks assort into *ancestors*
-- <span class=greyed> each pair of ancestors *coalesces* at rate 1  </span>
 - <span class=greyed> ancestors *split* at a uniform location at rate 1 </span>
+- <span class=greyed> each pair of ancestors *coalesces* at rate 1  </span>
 
 :::: {.greyed}
 Result: the *Ancestral Recombination Graph*, or ARG.
@@ -105,7 +179,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::::::: 
 
 
-## The coalescent with recombination
+##
 
 ::: {.columns}
 ::::::: {.column width=50%}
@@ -115,8 +189,8 @@ ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
 - labeled ancestral blocks assort into *ancestors*
-- each pair of ancestors *coalesces* at rate 1
-- <span class=greyed> ancestors *split* at a uniform location at rate 1 </span>
+- ancestors *split* at a uniform location at rate 1
+- <span class=greyed> each pair of ancestors *coalesces* at rate 1 </span>
 
 :::: {.greyed}
 Result: the *Ancestral Recombination Graph*, or ARG.
@@ -134,7 +208,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::::::: 
 
 
-## The coalescent with recombination
+##
 
 ::: {.columns}
 ::::::: {.column width=50%}
@@ -144,8 +218,8 @@ ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
 - labeled ancestral blocks assort into *ancestors*
-- each pair of ancestors *coalesces* at rate 1
 - ancestors *split* at a uniform location at rate 1
+- each pair of ancestors *coalesces* at rate 1
 
 :::: {.greyed}
 Result: the *Ancestral Recombination Graph*, or ARG.
@@ -163,7 +237,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::::::: 
 
 
-## The coalescent with recombination
+##
 
 ::: {.columns}
 ::::::: {.column width=50%}
@@ -173,8 +247,8 @@ ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
 - labeled ancestral blocks assort into *ancestors*
-- each pair of ancestors *coalesces* at rate 1
 - ancestors *split* at a uniform location at rate 1
+- each pair of ancestors *coalesces* at rate 1
 
 :::: {.greyed}
 Result: the *Ancestral Recombination Graph*, or ARG.
@@ -192,7 +266,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::::::: 
 
 
-## The coalescent with recombination
+##
 
 ::: {.columns}
 ::::::: {.column width=50%}
@@ -202,8 +276,8 @@ ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
 - labeled ancestral blocks assort into *ancestors*
-- each pair of ancestors *coalesces* at rate 1
 - ancestors *split* at a uniform location at rate 1
+- each pair of ancestors *coalesces* at rate 1
 
 :::: {.greyed}
 Result: the *Ancestral Recombination Graph*, or ARG.
@@ -221,7 +295,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::::::: 
 
 
-## The coalescent with recombination
+##
 
 ::: {.columns}
 ::::::: {.column width=50%}
@@ -231,8 +305,8 @@ ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
 - labeled ancestral blocks assort into *ancestors*
-- each pair of ancestors *coalesces* at rate 1
 - ancestors *split* at a uniform location at rate 1
+- each pair of ancestors *coalesces* at rate 1
 
 :::: {.greyed}
 Result: the *Ancestral Recombination Graph*, or ARG.
@@ -250,7 +324,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::::::: 
 
 
-## The coalescent with recombination
+##
 
 ::: {.columns}
 ::::::: {.column width=50%}
@@ -260,11 +334,11 @@ ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
 - labeled ancestral blocks assort into *ancestors*
-- each pair of ancestors *coalesces* at rate 1
 - ancestors *split* at a uniform location at rate 1
+- each pair of ancestors *coalesces* at rate 1
 
 Result: the *Ancestral Recombination Graph*, or ARG.
-(Griffiths & Marjoram)
+(Hudson; Griffiths & Marjoram)
 
 :::
 ::::::: {.column width=50%}
@@ -278,12 +352,13 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 
 ## Simulation
 
-[`msprime`](https://github.com/jeromekelleher/msprime): whole genomes with $N \sim 10^4$ in $O(\text{hours})$
+[`msprime`](https://github.com/jeromekelleher/msprime): whole genomes with $N \sim 10^5$ in $O(\text{minutes})$
 
 by [Kelleher, Etheridge, & McVean 2016](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004842) 
 
 ::: {.floatright}
-![jerome kelleher](figs/jerome.jpeg){width=50%}
+![](figs/msprime-time.png){width=65%}
+![jerome kelleher](figs/jerome.jpeg){width=30%}
 
 :::: {.caption}
 jerome kelleher
@@ -367,8 +442,11 @@ that says how they are related.
 
 ----------------------
 
-The **tree sequence** is a way to describe this, er, sequence of trees.
+The **succinct tree sequence**
 
+::: {.floatright}
+is a way to succinctly describe this, er, sequence of trees.
+:::
 
 ---------------
 
@@ -387,6 +465,7 @@ The **tree sequence** is a way to describe this, er, sequence of trees.
 [Kelleher, Etheridge, and McVean](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004842) 
 introduced the **tree sequence** data structure
 for a fast coalescent simulator, [msprime](https://github.com/jeromekelleher/msprime).
+*(updated in Kelleher, Thornton, Ashander, and R.; 2018)*
 
 - stores sequence *and* genealogical data **very** efficiently
 
@@ -400,7 +479,6 @@ for a fast coalescent simulator, [msprime](https://github.com/jeromekelleher/msp
 :::: {.caption}
 jerome kelleher
 ::::
-
 :::
 
 ## File sizes
@@ -410,6 +488,7 @@ jerome kelleher
 :::
 
 ::: {.caption}
+100Mb chromosomes;
 from [Kelleher et al 2018, *Inferring whole-genome histories in large population datasets*](https://www.nature.com/articles/s41588-019-0483-y), Nature Genetics
 :::
 
@@ -418,70 +497,6 @@ simulated human-like chromosome (100 megabases) for up to 10 billion haploid
 (5 billion diploid) samples. Simulations were run for 10 1 up to 10 7 haplotypes
 using msprime [Kelleher et al., 2016], and the sizes of the resulting files plotted
 (points). -->
-
-## History is a sequence of trees
-
-For a set of sampled chromosomes,
-at each position along the genome there is a genealogical tree
-that says how they are related.
-
-![Trees along a chromosome](sim_ts.anim.gif)
-
-
-----------------------
-
-A **tree sequence** describes this, er, sequence of trees.
-
-. . .
-
-*Observations:*
-
-1. The *pedigree* (parental relationships) plus crossover locations
-    would give us the tree sequence for *everyone, ever*.
-
-2. Much less can fully describe the history relevant to a *sample* of genomes.
-
-3. This information is equivalent to the Ancestral Recombination Graph (ARG).
-
-
--------------
-
-[Kelleher, Etheridge, and McVean](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004842) 
-introduced the **tree sequence** data structure
-for a fast coalescent simulator, [msprime](https://github.com/jeromekelleher/msprime).
-
-- stores genealogical *and* variation data **very** compactly
-
-- efficient algorithms available:
-
-    * subsetting
-    * calculation of allele frequencies in arbitrary cohorts
-    * linkage disequilibrium
-    * log-time haplotype matching
-
-- tree-based sequence storage closely related to haplotype-matching compression
-
-
-## Simulated file sizes
-
-::: {.columns}
-::::::: {.column width="50%"}
-
-![file sizes](file_size.png)
-
-:::
-::::::: {.column width="50%"}
-
-- HapMap chr1 genetic map (250Mb)
-- Gutenkunst et al out-of-Africa model (3 pops)
-- mutation rate $2 \times 10^{-8}$ per gen
-- at $n=10^7$ 
-
-    * about 17 million variants
-    * VCF size: 318 TiB (250,000$\times$ larger)
-
-:::
-:::::::
 
 ## Example: three samples; two trees; two variant sites
 
@@ -495,7 +510,7 @@ is *succinct* (no redundancy).
 
 . . .
 
-These are stored efficiently (hdf5) on disk
+These are stored efficiently on disk
 with a bit more information (e.g., metadata).
 
 
@@ -583,29 +598,43 @@ Sites
 ![Adding mutations](sites_muts_walkthrough/sites_muts_walkthrough.4.png)
 
 
-<!-- application to fwds sim recording (5min) -->
-# Forwards-time tree sequence recording
+## How efficient?
 
-## The main idea
+Consider a tree $T$ with total length $|T|$,
+that extends for distance $W$ along the genome.
 
-If we *record the tree sequence*
-that relates everyone to everyone else,
-
-after the simulation is over we can put neutral mutations down on the trees.
+> - The number of mutations on $T$ is $\propto \mu W |T|$.
+> - $\E[W] = \rho |T|$.
+> - Most adjacent trees differ by $\approx$ 4 edges.
 
 . . .
 
-Since neutral mutations don't affect demography,
+So, the number of required entries should be
+$$
+    O\left((\rho + \mu) |T|\right) .
+$$
 
-this is *equivalent* to having kept track of them throughout.
+## Mean area of a tree?
 
-------------
+> - In a neutral, randomly mating population of size $N$,
+>     the mean time with $k$ lineages is $4N / (k (k-1))$.
+> 
+> - So, for a tree with $n$ leaves,
+>     $$
+>         \E[|T|] = \sum_{k=2}^n \frac{4N}{k-1} \approx 4N \log n .
+>     $$
 
-This means recording the entire genetic history of **everyone** in the population, **ever**.
+. . .
 
-.  . .
+Trees *and* genotypes of $n$ samples for a genome of length $L$
+    should be storable in
+    $$
+        O\left( (\rho + \mu) L N \log n \right) .
+    $$
 
-It is *not* clear this is a good idea.
+
+<!-- application to fwds sim recording (5min) -->
+# Forwards-time tree sequence recording
 
 
 ## Tree recording strategy
@@ -663,18 +692,19 @@ of a subset?
 
 -----------
 
-Concretely, given an input tree sequence
+Given 
+an input tree sequence
 and a subset of its nodes we call the *samples*,
+
 we want a new tree sequence for which:
 
-1. All marginal trees match the corresponding subtree 
-    in the input tree sequence.
+1. All marginal subtrees agree.
 
-2. Every non-sample node in marginal trees has at least two children.
+2. All non-sample nodes have at least two children in every tree.
 
 3. All nodes and edges are ancestral to at least one sample.
 
-4. No adjacent redundant edges 
+4. No mergeable edges 
     (e.g., $(\ell, x, p, c) + (x, r, p, c) \rightarrow (\ell, r, p, c)$).
 
 -----------
@@ -793,28 +823,41 @@ Every time an individual is born, we must:
 4. Every so often, *simplify* the tables so far,
     retaining the history of the current generation.
 
+## Implementation
 
-<!-- 5. display impressive speedups 2min) -->
-# Implementation and results
+::: {.centered}
+![](figs/slim_logo.png){width=65%}
+:::
 
-## Benchmark implementation
+::: {.floatright .caption}
+Kelleher, Thornton, Ashander, and R. (2018)
 
-- Recording, simplifying, and output of tables: 
-    `C` code in `msprime`.
+Haller, Galloway, Kelleher, Messer & R. (2018)
+:::
 
-- Simulation: [`fwdpp`](https://github.com/molpopgen/fwdpp), by Kevin Thornton (in `C++`) ([code](https://github.com/molpopgen/fwdpy11_arg_example))
+## It works!
 
-- Glue: [`pybind11`](https://github.com/pybind/pybind11/) and [`numpy`](http://www.numpy.org/)
+::: {.columns}
+::::::: {.column width=60%}
 
-- Machine: Ubuntu / 2x 2.6 GHz Intel E5-2650 CPU
+![](figs/slim_speedup.png){width=100%}
 
-. . .
+:::
+::::::: {.column width=40%}
 
-*Other implementations:* 
+::: {.caption}
+**SLiM:** forwards-time, individual-based, with selection on whole genomes, continuous geography, etcetera.
+(Haller & Messer).
 
-- [pure `python`](https://github.com/ashander/ftprime), interfacing with [`simuPOP`](https://github.com/BoPeng/simuPOP)
-- [cython](https://github.com/molpopgen/tutorials/blob/cython_cpp_tutorial/notebooks/wfcython.ipynb)
+Note: with "treeSeq",
+the neutral mutation rate was *zero*
+but neutral mutations were added *afterwards*.
+:::
 
+:::
+:::::::
+
+<!--
 ## Simulation parameters
 
 1. Wright-Fisher population of size $N$
@@ -823,12 +866,6 @@ Every time an individual is born, we must:
 4. many, weakly deleterious mutations: rate $\mu/100$ with
     $s$ exponentially distributed with mean $2.5/N$.
 
-. . .
-
-*Note:*
-if we recorded tree sequences ("pedigree recording")
-then the neutral mutation rate was *zero*
-but neutral mutations were added *afterwards*.
 
 
 --------------------------
@@ -839,26 +876,20 @@ but neutral mutations were added *afterwards*.
 
 ![Relative speedup of simulations](speedup.png){ width=80% }
 
-
-
-## Memory use
-
-RAM requirements are determined by how often you simplify.
+-->
 
 
 
+# Summarizing genomes and genealogies
 
-
-# Along the sequence of trees
-
-## Computation run time
+## Fast genotype statistics
 
 ::: {.centered}
 ![efficiency of treestat computation](figs/treestats/benchmarks_without_copy_longer_genome.png){width=70%}
 :::
 
 ::: {.caption}
-from [Ralph, Thornton and Kelleher 2019, *Efficiently summarizing relationships in large samples*](https://www.biorxiv.org/content/10.1101/779132v1?rss=1), bioRxiv
+from [R., Thornton and Kelleher 2019, *Efficiently summarizing relationships in large samples*](https://www.biorxiv.org/content/10.1101/779132v1?rss=1), bioRxiv
 :::
 
 ##
@@ -867,7 +898,7 @@ from [Ralph, Thornton and Kelleher 2019, *Efficiently summarizing relationships 
 
 
 ::: {.caption}
-also from [Ralph, Thornton and Kelleher 2019, *Efficiently summarizing relationships in large samples*](https://www.biorxiv.org/content/10.1101/779132v1?rss=1), bioRxiv
+from [R., Thornton and Kelleher 2019, *Efficiently summarizing relationships in large samples*](https://www.biorxiv.org/content/10.1101/779132v1?rss=1), bioRxiv
 :::
 
 
@@ -934,6 +965,28 @@ the mean time to most recent common ancestor between two sequences.
 
 ![site and branch stats](figs/ts_ex/tree_sequence_site_and_branch.png)
 
+##
+
+Given
+
+1. a *weight* $w_i \in \mathbb{R}^n$ to each *sample node*, and
+2. a *summary function* $f : \mathbb{R}^n \to \mathbb{R}$,
+
+. . .
+
+the **Site** statistic 
+$$\begin{equation}
+ \text{Site}(f,w) = \sum_{i: \text{sites}} \sum_{a: \text{alleles}_i} f(w_a)
+\end{equation}$$
+is the total summarized weights of all *alleles* at all sites,
+
+. . .
+
+and the **Branch** statistic 
+$$\begin{equation}
+ \text{Branch}(f,w) = \sum_{T: \text{trees}} s_T \sum_{b: \text{branches}_T} f(w_b) \ell_b
+\end{equation}$$
+is the *expected value* of $\text{Site}(f,w)$ under Poisson(1) mutation, given the trees.
 
 ## Duality
 
@@ -962,6 +1015,10 @@ $$\begin{equation}
     \frac{1}{n}
     \E\left[\text{Branch}(f^2,w)\right]
 \end{equation}$$
+
+::: {.caption .greyed .floatright}
+also see R., TPB, 2019
+:::
 
 ## 
 
@@ -995,54 +1052,169 @@ Duality, on 1000 Genomes data? Not quite...
 
 What about real data?
 
+. . .
+
+*Back-of-the-envelope:*
+One million whole human genomes
+should be related by around 35 million trees.
+
 ## Inferring the ancestry of everyone
+
+Previous methods:
+ARGweaver,
+Rent+,
+fastARG
+
+. . .
 
 **Left-to-right:**
 
-Leo Speidel, Marie Forest, Sinan Shi, and Simon R. Myers.
-*A method for genome-wide genealogy estimation for thousands of samples.*
+**Relate:** Leo Speidel, Marie Forest, Sinan Shi, and Simon Myers.
+[*A method for genome-wide genealogy estimation for thousands of samples.*](https://www.nature.com/articles/s41588-019-0484-x)
 Nature Genetics, 51(9):1321–1329, 2019.
 
 . . .
 
 **Bottom-up:**
 
-Jerome Kelleher, Yan Wong, Anthony W. Wohns, Chaimaa Fadil, Patrick K. Albers, and Gil McVean.
-*Inferring whole-genome histories in large population datasets.*
+**tsinfer:** Jerome Kelleher, Yan Wong, Anthony Wohns, Chaimaa Fadil, Patrick Albers, and Gil McVean.
+[*Inferring whole-genome histories in large population datasets.*](https://www.nature.com/articles/s41588-019-0483-y)
 Nature Genetics, 51(9):1330–1338, 2019.
+
+## `tsinfer` (Kelleher et al)
+
+![Fig. 2 from tsinfer](figs/tsinfer_method.png)
 
 ## Challenges in inference
 
 - segmentation of genomes into *shared haplotypes*
 - hierarchical structuring into a *tree sequence*
 - calibration of *node times*
+- estimating *uncertainty*
+
+## Li & Stephens
+
+![Supp Fig 1 from Speidel et al](figs/speidel-li-and-stephens.png)
+
+::: {.caption .floatright}
+from Speidel et al
+:::
+
+## What can you do with the tree sequence?
+
+![Fig 4 from Speidel et al](figs/speidel-et-al_results-tree.png)
+
+::: {.caption .floatright}
+from Speidel et al
+:::
+
+## What can you do with the tree sequence?
+
+![Fig 4 from Speidel et al](figs/speidel-et-al_results-mutrate.png)
+
+::: {.caption .floatright}
+from Speidel et al; also see Harris (2015)
+:::
+
+## How to compare tree sequences?
+
+![Fig 3 from tsinfer](figs/tsinfer_kc_metric.png){width=90%}
+
+::: {.caption .floatright}
+KC = average Kendall-Colijn tree metric;
+from Kelleher et al
+:::
+
+
+## Open question
+
+
+Define a metric on tree sequences that:
+
+- measures both similarity of marginal trees
+- *and* haplotype structure,
+- and is efficiently calculable.
+
+
+# Wrap-up
 
 ## 
 
-We need *metrics* for tree sequences.
+*Tree sequences* are a very nice data structure for genomes
+that derive from the *generative (genealogical) process*.
 
 . . .
 
+Lots to do on
 
-> - Average tree distance along the genome?
-> 
-> - How to quantify haplotype sharing?
-> 
-> - Efficient computation? (should scale to millions of trees with millions of tips)
+- theoretical properties from generative processes,
+- summaries and descriptive statistics,
+- defining metrics, and
+- **inference**!
 
-# Thanks
+## Code availability
 
-## Acknowledgements
+::: {.columns}
+::::::: {.column}
 
-Jerome, Jaime, and Kevin: 
+Everything is efficient, open, and tested:
 
-[![Jerome](jerome.jpeg){width="30%"}](http://jeromekelleher.net/pages/about.html),
-[![Jaime](jaime.jpg){width="30%"}](http://www.ashander.info/)
-[![Kevin](kevin.jpeg){width="30%"}](https://github.com/molpopgen).
+- `tskit`: tree sequence tools 
 
-Funding: NSF (PR); Wellcome Trust (JK); NIH (KRT); USF&WS (JDA).
+    [github:tskit-dev/tskit](https://github.com/tskit-dev/tskit)
+
+- `msprime`: coalescent simulator,
+
+    [github:tskit-dev/msprime](https://github.com/tskit-dev/msprime)
+
+- `SLiM` : forwards evolutionary simulator
+
+    [messerlab.org/slim](https://messerlab.org/slim/)
+
+:::
+::::::: {.column}
+
+![tskit logo](figs/tskit_logo_pale.png){width=100%}
+
+:::
+:::::::
+
+## Thanks
+
+::: {.columns}
+:::::::: {.column}
+
+- Philipp Messer
+- Boyana Norris
+- Gil McVean
+- Georgia Tsambos
+- Yan Wong
+- Simon Myers
+- Wilder Wohns
+- Kevin Thornton
+- Graham Coop
+- Gideon Bradburd
+- Alison Etheridge
+- CJ Battey
+- Andy Kern
+
+:::
+:::::::: {.column}
+
+- `tskit-dev`
+- Jerome Kelleher
+- Ben Haller
+- Jared Galloway
+- Jaime Ashander
+
+Funding: NSF, UO (PR); Wellcome Trust (JK);
 
 Slides with [reveal.js](http://hakim.se) and [pandoc](https://pandoc.org/).
+
+![tskit logo](figs/tskit_logo_pale.png){width=50%}
+
+:::
+::::::::
 
 <!-- questions?? -->
 ## {data-background-image="figs/guillemots_thanks.png" data-background-position=center data-background-size=50%}

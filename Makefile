@@ -3,7 +3,7 @@ SHELL := /bin/bash
 
 .PHONY : setup
 
-nw-prob-talk.local.slides.html : setup
+nw-prob-talk.slides.html nw-prob-talk.local.slides.html : setup
 
 setup :
 	$(MAKE) -C figs

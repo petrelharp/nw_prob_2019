@@ -14,7 +14,7 @@
 
 .caption p { font-size: 75%; }
 
-.greyed { color: grey; }
+.greyed { color: #4444; }
 
 div.floatright { float: right; text-align: right; }
 
