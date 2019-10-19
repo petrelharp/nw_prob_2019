@@ -1023,19 +1023,11 @@ $$\begin{equation}
 \end{equation}$$
 is the *expected value* of $\text{Site}(f,w)$ under Poisson(1) mutation, given the trees.
 
-## Duality
-
-Any set of *sample weights* $w$ and *summary function* $f$
-defines both
-
-- a statistic of genotypes, $\text{Site}(f,w)$, and
-- a statistic of genealogies, $\text{Branch}(f,w)$.
-
-. . .
+## 
 
 With genealogies *fixed*, and averaging only over *mutations* with rate $\mu$,
 $$\begin{equation}
-    \text{Branch}(f, w) = \frac{1}{\mu} \E\left[ \text{Site}(f, w) \right] .
+    \text{Branch}(f, w) = \frac{1}{\mu} \E\left[ \text{Site}(f, w) \vert T \right] .
 \end{equation}$$
 
 . . .
@@ -1127,7 +1119,7 @@ Nature Genetics, 51(9):1330–1338, 2019.
 - calibration of *node times*
 - estimating *uncertainty*
 
-## Li & Stephens
+## Li & Stephens HMM
 
 ![Supp Fig 1 from Speidel et al](figs/speidel-li-and-stephens.png)
 
