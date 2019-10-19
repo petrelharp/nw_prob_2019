@@ -187,7 +187,7 @@
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>In a <em>randomly mating</em> population of size <span class="math inline">\(N\)</span>, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
+<p>In a <em>randomly mating</em> population, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
 <ul>
 <li>blocks labeled by who inherits from them</li>
 <li><span class="greyed"> blocks <em>split</em> at rate proportional to length </span></li>
@@ -207,7 +207,7 @@
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>In a <em>randomly mating</em> population of size <span class="math inline">\(N\)</span>, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
+<p>In a <em>randomly mating</em> population, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
 <ul>
 <li>blocks labeled by who inherits from them</li>
 <li>blocks <em>split</em> at rate proportional to length</li>
@@ -227,7 +227,7 @@
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>In a <em>randomly mating</em> population of size <span class="math inline">\(N\)</span>, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
+<p>In a <em>randomly mating</em> population, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
 <ul>
 <li>blocks labeled by who inherits from them</li>
 <li>blocks <em>split</em> at rate proportional to length</li>
@@ -247,7 +247,7 @@
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>In a <em>randomly mating</em> population of size <span class="math inline">\(N\)</span>, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
+<p>In a <em>randomly mating</em> population, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
 <ul>
 <li>blocks labeled by who inherits from them</li>
 <li>blocks <em>split</em> at rate proportional to length</li>
@@ -267,7 +267,7 @@
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>In a <em>randomly mating</em> population of size <span class="math inline">\(N\)</span>, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
+<p>In a <em>randomly mating</em> population, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
 <ul>
 <li>blocks labeled by who inherits from them</li>
 <li>blocks <em>split</em> at rate proportional to length</li>
@@ -287,7 +287,7 @@
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>In a <em>randomly mating</em> population of size <span class="math inline">\(N\)</span>, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
+<p>In a <em>randomly mating</em> population, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
 <ul>
 <li>blocks labeled by who inherits from them</li>
 <li>blocks <em>split</em> at rate proportional to length</li>
@@ -307,7 +307,7 @@
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>In a <em>randomly mating</em> population of size <span class="math inline">\(N\)</span>, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
+<p>In a <em>randomly mating</em> population, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
 <ul>
 <li>blocks labeled by who inherits from them</li>
 <li>blocks <em>split</em> at rate proportional to length</li>
@@ -327,14 +327,14 @@
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>In a <em>randomly mating</em> population of size <span class="math inline">\(N\)</span>, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
+<p>In a <em>randomly mating</em> population, ancestry of some chromosomes follows a <em>fragmentation-coalescence process</em>:</p>
 <ul>
 <li>ancestral blocks assort into <em>ancestors</em></li>
 <li>blocks <em>split</em> at rate proportional to length</li>
 <li>overlapping pairs <em>coalesce</em> at rate 1</li>
 <li>add mutations at the end</li>
 </ul>
-<p>Result: the <em>Ancestral Recombination Graph</em>, or ARG. (Hudson; Griffiths &amp; Marjoram)</p>
+<p>Result: the <em>Ancestral Recombination Graph</em>, or ARG. (Hudson ’83; Griffiths ’91, Griffiths &amp; Marjoram ’97)</p>
 </div><div class="column" style="width:50%;">
 <div class="floatright">
 <p><img data-src="figs/frag_coal/fragmentation_coalescence.7.png" style="width:80.0%" /></p>
@@ -365,7 +365,7 @@
 
 <p>To study evolution or understand populations across real geography, we need individual-based, forwards-time simulations.</p>
 <div class="fragment">
-<p>Then every individual needs to carry around her genotype (somehow). Even at neutral sites!</p>
+<p>Then we need to keep track of every individual’s genome.</p>
 </div>
 <div class="fragment">
 <p><strong>Bummer.</strong></p>
@@ -548,13 +548,13 @@ using msprime [Kelleher et al., 2016], and the sizes of the resulting files plot
 <h2>How efficient?</h2>
 <p>Consider a tree <span class="math inline">\(T\)</span> with total length <span class="math inline">\(|T|\)</span>, that extends for distance <span class="math inline">\(W\)</span> along the genome.</p>
 <ul>
-<li class="fragment">The number of mutations on <span class="math inline">\(T\)</span> is <span class="math inline">\(\propto \mu W |T|\)</span>.</li>
+<li class="fragment"><span class="math inline">\(\E[\text{number of mutations on $T$}] = \mu W |T|\)</span>.</li>
 <li class="fragment"><span class="math inline">\(\E[W] = \rho |T|\)</span>.</li>
 <li class="fragment">Most adjacent trees differ by <span class="math inline">\(\approx\)</span> 4 edges.</li>
 </ul>
 <div class="fragment">
 <p>So, the number of required entries should be <span class="math display">\[
-    O\left((\rho + \mu) |T|\right) .
+    O\left((\rho + \mu) \E[|T|]\right) .
 \]</span></p>
 </div>
 </section><section id="mean-area-of-a-tree" class="slide level2">
@@ -1002,7 +1002,7 @@ using msprime [Kelleher et al., 2016], and the sizes of the resulting files plot
 </ul>
 </div><div class="column">
 <figure>
-<img data-src="figs/tskit_logo_pale.png" alt="tskit logo" style="width:100.0%" /><figcaption>tskit logo</figcaption>
+<img data-src="figs/tskit_logo.png" alt="tskit logo" style="width:100.0%" /><figcaption>tskit logo</figcaption>
 </figure>
 </div>
 </div>
@@ -1036,7 +1036,7 @@ using msprime [Kelleher et al., 2016], and the sizes of the resulting files plot
 <p>Funding: NSF, UO (PR); Wellcome Trust (JK);</p>
 <p>Slides with <a href="http://hakim.se">reveal.js</a> and <a href="https://pandoc.org/">pandoc</a>.</p>
 <figure>
-<img data-src="figs/tskit_logo_pale.png" alt="tskit logo" style="width:50.0%" /><figcaption>tskit logo</figcaption>
+<img data-src="figs/tskit_logo.png" alt="tskit logo" style="width:50.0%" /><figcaption>tskit logo</figcaption>
 </figure>
 </div>
 </div>

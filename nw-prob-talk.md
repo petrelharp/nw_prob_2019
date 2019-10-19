@@ -156,7 +156,7 @@ What can we learn about its structure? history? biology?
 ::: {.columns}
 ::::::: {.column width=50%}
 
-In a *randomly mating* population of size $N$,
+In a *randomly mating* population,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
@@ -186,7 +186,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::: {.columns}
 ::::::: {.column width=50%}
 
-In a *randomly mating* population of size $N$,
+In a *randomly mating* population,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
@@ -216,7 +216,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::: {.columns}
 ::::::: {.column width=50%}
 
-In a *randomly mating* population of size $N$,
+In a *randomly mating* population,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
@@ -246,7 +246,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::: {.columns}
 ::::::: {.column width=50%}
 
-In a *randomly mating* population of size $N$,
+In a *randomly mating* population,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
@@ -276,7 +276,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::: {.columns}
 ::::::: {.column width=50%}
 
-In a *randomly mating* population of size $N$,
+In a *randomly mating* population,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
@@ -306,7 +306,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::: {.columns}
 ::::::: {.column width=50%}
 
-In a *randomly mating* population of size $N$,
+In a *randomly mating* population,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
@@ -335,7 +335,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::: {.columns}
 ::::::: {.column width=50%}
 
-In a *randomly mating* population of size $N$,
+In a *randomly mating* population,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
@@ -365,7 +365,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::: {.columns}
 ::::::: {.column width=50%}
 
-In a *randomly mating* population of size $N$,
+In a *randomly mating* population,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
@@ -375,7 +375,7 @@ ancestry of some chromosomes follows a
 - add mutations at the end
 
 Result: the *Ancestral Recombination Graph*, or ARG.
-(Hudson; Griffiths & Marjoram)
+(Hudson '83; Griffiths '91, Griffiths & Marjoram '97)
 
 :::
 ::::::: {.column width=50%}
@@ -429,8 +429,7 @@ we need individual-based, forwards-time simulations.
 
 . . .
 
-Then every individual needs to carry around her genotype (somehow).
-Even at neutral sites!
+Then we need to keep track of every individual's genome.
 
 . . .
 
@@ -639,7 +638,7 @@ Sites
 Consider a tree $T$ with total length $|T|$,
 that extends for distance $W$ along the genome.
 
-> - The number of mutations on $T$ is $\propto \mu W |T|$.
+> - $\E[\text{number of mutations on $T$}] = \mu W |T|$.
 > - $\E[W] = \rho |T|$.
 > - Most adjacent trees differ by $\approx$ 4 edges.
 
@@ -647,7 +646,7 @@ that extends for distance $W$ along the genome.
 
 So, the number of required entries should be
 $$
-    O\left((\rho + \mu) |T|\right) .
+    O\left((\rho + \mu) \E[|T|]\right) .
 $$
 
 ## Mean area of a tree?
@@ -1210,7 +1209,7 @@ Everything is efficient, open, and tested:
 :::
 ::::::: {.column}
 
-![tskit logo](figs/tskit_logo_pale.png){width=100%}
+![tskit logo](figs/tskit_logo.png){width=100%}
 
 :::
 :::::::
@@ -1247,7 +1246,7 @@ Funding: NSF, UO (PR); Wellcome Trust (JK);
 
 Slides with [reveal.js](http://hakim.se) and [pandoc](https://pandoc.org/).
 
-![tskit logo](figs/tskit_logo_pale.png){width=50%}
+![tskit logo](figs/tskit_logo.png){width=50%}
 
 :::
 ::::::::
