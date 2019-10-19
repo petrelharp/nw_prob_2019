@@ -43,7 +43,8 @@ In a well-mixed population of size $N$,
 - A most recent common ancestor of *everyone* lived at $\approx \log_2 N$ generations ago.
 
 - For humans: $\approx 500$ years; 
-    but including geography and history, $\approx$ 2--3 thousand years
+    but including geography and history,
+    $\approx$ 2--3 thousand years
     (Chang ’99; Rohde, Olson & Chang ’04)
 
 - *Everyone* alive $\approx 1.77 \log_2 N$ generations ago
@@ -159,9 +160,10 @@ In a *randomly mating* population of size $N$,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
-- labeled ancestral blocks assort into *ancestors*
-- <span class=greyed> ancestors *split* at a uniform location at rate 1 </span>
-- <span class=greyed> each pair of ancestors *coalesces* at rate 1  </span>
+- blocks labeled by who inherits from them
+- <span class=greyed> blocks *split* at rate proportional to length </span>
+- <span class=greyed> overlapping pairs *coalesce* at rate 1  </span>
+- <span class=greyed> add mutations at the end </span>
 
 :::: {.greyed}
 Result: the *Ancestral Recombination Graph*, or ARG.
@@ -188,9 +190,10 @@ In a *randomly mating* population of size $N$,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
-- labeled ancestral blocks assort into *ancestors*
-- ancestors *split* at a uniform location at rate 1
-- <span class=greyed> each pair of ancestors *coalesces* at rate 1 </span>
+- blocks labeled by who inherits from them
+- blocks *split* at rate proportional to length
+- <span class=greyed> overlapping pairs *coalesce* at rate 1 </span>
+- <span class=greyed> add mutations at the end </span>
 
 :::: {.greyed}
 Result: the *Ancestral Recombination Graph*, or ARG.
@@ -217,9 +220,10 @@ In a *randomly mating* population of size $N$,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
-- labeled ancestral blocks assort into *ancestors*
-- ancestors *split* at a uniform location at rate 1
-- each pair of ancestors *coalesces* at rate 1
+- blocks labeled by who inherits from them
+- blocks *split* at rate proportional to length
+- overlapping pairs *coalesce* at rate 1
+- <span class=greyed> add mutations at the end </span>
 
 :::: {.greyed}
 Result: the *Ancestral Recombination Graph*, or ARG.
@@ -246,9 +250,10 @@ In a *randomly mating* population of size $N$,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
-- labeled ancestral blocks assort into *ancestors*
-- ancestors *split* at a uniform location at rate 1
-- each pair of ancestors *coalesces* at rate 1
+- blocks labeled by who inherits from them
+- blocks *split* at rate proportional to length
+- overlapping pairs *coalesce* at rate 1
+- <span class=greyed> add mutations at the end </span>
 
 :::: {.greyed}
 Result: the *Ancestral Recombination Graph*, or ARG.
@@ -275,9 +280,10 @@ In a *randomly mating* population of size $N$,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
-- labeled ancestral blocks assort into *ancestors*
-- ancestors *split* at a uniform location at rate 1
-- each pair of ancestors *coalesces* at rate 1
+- blocks labeled by who inherits from them
+- blocks *split* at rate proportional to length
+- overlapping pairs *coalesce* at rate 1
+- <span class=greyed> add mutations at the end </span>
 
 :::: {.greyed}
 Result: the *Ancestral Recombination Graph*, or ARG.
@@ -304,9 +310,10 @@ In a *randomly mating* population of size $N$,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
-- labeled ancestral blocks assort into *ancestors*
-- ancestors *split* at a uniform location at rate 1
-- each pair of ancestors *coalesces* at rate 1
+- blocks labeled by who inherits from them
+- blocks *split* at rate proportional to length
+- overlapping pairs *coalesce* at rate 1
+- <span class=greyed> add mutations at the end </span>
 
 :::: {.greyed}
 Result: the *Ancestral Recombination Graph*, or ARG.
@@ -323,6 +330,35 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 :::
 ::::::: 
 
+##
+
+::: {.columns}
+::::::: {.column width=50%}
+
+In a *randomly mating* population of size $N$,
+ancestry of some chromosomes follows a
+*fragmentation-coalescence process*:
+
+- blocks labeled by who inherits from them
+- blocks *split* at rate proportional to length
+- overlapping pairs *coalesce* at rate 1
+- add mutations at the end
+
+:::: {.greyed}
+Result: the *Ancestral Recombination Graph*, or ARG.
+(Griffiths & Marjoram)
+:::::
+
+:::
+::::::: {.column width=50%}
+
+:::: {.floatright}
+![](figs/frag_coal/fragmentation_coalescence.7.png){width=80%}
+::::
+
+:::
+::::::: 
+
 
 ##
 
@@ -333,9 +369,10 @@ In a *randomly mating* population of size $N$,
 ancestry of some chromosomes follows a
 *fragmentation-coalescence process*:
 
-- labeled ancestral blocks assort into *ancestors*
-- ancestors *split* at a uniform location at rate 1
-- each pair of ancestors *coalesces* at rate 1
+- ancestral blocks assort into *ancestors*
+- blocks *split* at rate proportional to length
+- overlapping pairs *coalesce* at rate 1
+- add mutations at the end
 
 Result: the *Ancestral Recombination Graph*, or ARG.
 (Hudson; Griffiths & Marjoram)
@@ -344,7 +381,7 @@ Result: the *Ancestral Recombination Graph*, or ARG.
 ::::::: {.column width=50%}
 
 :::: {.floatright}
-![](figs/frag_coal/fragmentation_coalescence.6.png){width=80%}
+![](figs/frag_coal/fragmentation_coalescence.7.png){width=80%}
 ::::
 
 :::
@@ -405,10 +442,9 @@ Even at neutral sites!
 
 ## 
 
-If we *record the tree sequence*
-that relates everyone to everyone else,
+If we *record* exactly how everyone is related to everyone to everyone else,
 
-after the simulation is over we can put neutral mutations down on the trees.
+we can add the neutral mutations *after the simulation is over*.
 
 . . .
 
