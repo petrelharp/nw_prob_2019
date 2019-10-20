@@ -1,7 +1,7 @@
 ---
 title: "Whole genomes and whole genealogies"
 subtitle: "progress and challenges with tree sequences"
-author: "Peter Ralph"
+author: "Peter Ralph, University of Oregon"
 date: "Northwest Probability // October 2019"
 ---
 
